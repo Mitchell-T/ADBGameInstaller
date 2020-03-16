@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.Skin1 = new FlatUI.FormSkin();
+            this.MusicButton = new FlatUI.FlatButton();
+            this.Request_Button = new FlatUI.FlatButton();
             this.OutputTextBox = new FlatUI.FlatTextBox();
-            this.AlertBox = new FlatUI.FlatAlertBox();
             this.InstallButton = new FlatUI.FlatButton();
             this.CheckboxList = new System.Windows.Forms.CheckedListBox();
             this.AvailableGamesLabel = new FlatUI.FlatLabel();
@@ -45,8 +46,9 @@
             this.Skin1.BackColor = System.Drawing.Color.White;
             this.Skin1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
             this.Skin1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+            this.Skin1.Controls.Add(this.MusicButton);
+            this.Skin1.Controls.Add(this.Request_Button);
             this.Skin1.Controls.Add(this.OutputTextBox);
-            this.Skin1.Controls.Add(this.AlertBox);
             this.Skin1.Controls.Add(this.InstallButton);
             this.Skin1.Controls.Add(this.CheckboxList);
             this.Skin1.Controls.Add(this.AvailableGamesLabel);
@@ -63,6 +65,36 @@
             this.Skin1.TabIndex = 0;
             this.Skin1.Text = "Galaxy Games Game Installer";
             // 
+            // MusicButton
+            // 
+            this.MusicButton.BackColor = System.Drawing.Color.Transparent;
+            this.MusicButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.MusicButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MusicButton.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.MusicButton.Location = new System.Drawing.Point(3, 3);
+            this.MusicButton.Name = "MusicButton";
+            this.MusicButton.Rounded = false;
+            this.MusicButton.Size = new System.Drawing.Size(6, 6);
+            this.MusicButton.TabIndex = 9;
+            this.MusicButton.Text = "Music";
+            this.MusicButton.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.MusicButton.Click += new System.EventHandler(this.MusicButton_Click);
+            // 
+            // Request_Button
+            // 
+            this.Request_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Request_Button.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+            this.Request_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Request_Button.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.Request_Button.Location = new System.Drawing.Point(16, 430);
+            this.Request_Button.Name = "Request_Button";
+            this.Request_Button.Rounded = false;
+            this.Request_Button.Size = new System.Drawing.Size(385, 52);
+            this.Request_Button.TabIndex = 8;
+            this.Request_Button.Text = "REQUEST PERMISSION";
+            this.Request_Button.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.Request_Button.Click += new System.EventHandler(this.Request_Button_Click);
+            // 
             // OutputTextBox
             // 
             this.OutputTextBox.BackColor = System.Drawing.Color.Transparent;
@@ -78,26 +110,13 @@
             this.OutputTextBox.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.OutputTextBox.UseSystemPasswordChar = false;
             // 
-            // AlertBox
-            // 
-            this.AlertBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
-            this.AlertBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AlertBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.AlertBox.kind = FlatUI.FlatAlertBox._Kind.Success;
-            this.AlertBox.Location = new System.Drawing.Point(16, 504);
-            this.AlertBox.Name = "AlertBox";
-            this.AlertBox.Size = new System.Drawing.Size(385, 42);
-            this.AlertBox.TabIndex = 6;
-            this.AlertBox.Text = "Succes!";
-            this.AlertBox.Visible = false;
-            // 
             // InstallButton
             // 
             this.InstallButton.BackColor = System.Drawing.Color.Transparent;
             this.InstallButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
             this.InstallButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InstallButton.Font = new System.Drawing.Font("Segoe UI", 35F, System.Drawing.FontStyle.Bold);
-            this.InstallButton.Location = new System.Drawing.Point(16, 419);
+            this.InstallButton.Location = new System.Drawing.Point(16, 488);
             this.InstallButton.Name = "InstallButton";
             this.InstallButton.Rounded = false;
             this.InstallButton.Size = new System.Drawing.Size(385, 79);
@@ -181,7 +200,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private FlatUI.FlatButton InstallButton;
         private FlatUI.FlatTextBox OutputTextBox;
-        private FlatUI.FlatAlertBox AlertBox;
+        private FlatUI.FlatButton Request_Button;
+        private FlatUI.FlatButton MusicButton;
     }
 }
 
